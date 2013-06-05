@@ -1,0 +1,1344 @@
+去年我来这里讲过
+alright, last year I was actually on this stage and I gave a little talk
+
+等下我直接播放好叻
+I'm just gonna play quick excerpts of of that right now
+
+
+我讲的下一个话题是关于Web开发工作流程
+I talked about web development workflow
+
+我认为这两年有很多新的工具
+because I think over the past two years in particular there's been a lot of tools that
+
+可以加快开发者的工作流程
+we've got in as developers to increase our productivity, reduce our stress
+
+如何把他们融合在一起是一个有趣的挑战
+putting them together in kind of a work flow that make sense has been an interesting challenge
+
+所以我来谈谈我还有其他人是如何做的
+so I'm gonna walk through what my approaches has been and some of the approaches
+
+先说一下
+I've seen other developers doing uh... first thing I should point out
+
+(这句话我不翻译啦)
+please try and pay no attention to the enormous rhinoceros genetalia behind me
+
+大家不要为了它而分心哟
+it is distracting, it is very distracting
+
+不管怎样, 去年我谈了2013 JS开发工作流程
+but anyway so yes last year I talked about the Javascript workflow of  2013
+
+我觉得应该回顾一下
+um... so I've figured it would be kind of good to revisit that now that it's 2013
+
+毕竟现在就是2013
+so this is the javascript authoring workflow of now um...yeah
+
+再上一段视频嘞 (开播了)
+a few things I touched on last year uh... just quick little excerpts things here and there
+
+我认为有实时的反馈很重要
+so I think having realtime feedback is an important thing
+
+比如实时更新, 还有实时编译等
+live recompilation and live reload now massages here
+
+你看这里, 编译后的Sass 然后我们谈谈source maps
+the sass final, the next is source maps
+
+(okay, 大家回神了)
+okay just quick little
+
+去年演讲中提到的这几个流行词
+bits and bobs of technologies um... buzz words but all useful things
+
+有大概谈谈他们是怎么结合在一起
+and last year I kind of showed kind of putting these together kind of disparate technologies to kind of come into a workflow that kind of works together
+
+之后我们Chrome 开发者工具团队就一直在想如何
+but on the chrome DevTools team we've been thinking about this and
+
+把他们更好的融入到开发者工具里面
+figured out how we can make this into a more cohesive workflow
+
+今天就来展示一下成果
+and I wanna show you some of the features uh...that have come out of that work
+
+第一个是Workspaces
+the first up is called workspaces
+
+噢噢 等下个...
+um... but um...uh... this is embarrassing uh...
+
+让我修修
+so just bear with me I'm gonna fix this now
+
+(哼歌中...)
+just dadan da
+
+让我把这个干掉, 然后去我的编辑器
+just kill this actually I'm gonna come to my editor
+
+把新的样式放在这里
+let's make some room for that so that
+
+哒哒哒...不需要这个width
+we can put in some new styles uh... I don't need this width
+
+然后关掉这个box-shadow
+that should fix that I can turn off this box shadow
+
+加个line-height, 这样就差不多了
+Get a line height, that looks about right-ish
+
+再来个font-size
+and font size
+
+酱紫, 来到我的编辑器
+alright, let's bring these changes over to my editor
+
+所有改动立刻浮现哈
+change on disk reload
+
+好赞
+sure sure, oh oh, all right as you can see here nice
+
+开发者工具帮我自动加载
+DevTools is doing this work for me so I'm making changes in the styles panel
+
+到磁盘上
+it's going to bring these back to disk
+
+比如我在Sublime上面添加一些东东
+so let's say I actually wanna add something back over here inside sublime
+
+来个text-shadow: 1px 1px 10px white
+and let's see we'll do 1px 1px 10px and white
+
+保存内容然后...锵锵
+um... just hit save and come over here, yeah, 
+
+看起来不错哦, 但是我觉得黑色会更好一点
+that's that's looks pretty pretty good, but I'm gonna go with black instead
+
+嗯嗯好帅呢
+yes that's sharp okay cool
+
+样式解决...然后
+styles are looking good but we still have
+
+等个下
+Whoops um...
+
+现在的内容在用Markdown
+so this is a HTML slide deck but I'm using markdown for the contents
+
+打开这个markdown 先按Command + O
+so let's edit the markdown I'm gonna hit the Command + O
+
+打开slides.md
+and it bring up slides.md
+
+然后把这个O改成小写的
+and uh... here is that typo just change that to lowercase
+
+按Command + S保存 刷新
+and hit Command + S to save and refresh
+
+看起来不错, 这个就是workspaces
+looking good... cool nice so this is workspaces
+
+它让我把系统上的文件夹带到开发者工具中
+workspaces allows me to bring in folders on my system into the dev tools and edit it
+
+开发者工具自动绑定
+what the dev tool is going to do is map this to what's coming over the wire
+
+这样我就可以有个后台提供内容
+so I can make full backend and serving up this content
+
+开发者工具就能把这些文件
+DevTools is going to map the resources so that
+
+更改直接更新到硬盘上
+when I make changes to things on screen it's gonna be able to make these changes to what's persistent on disk as well
+
+这样我可以编辑任何东西, 比如这个Markdown
+I can edit everything this is you know this is mark down here
+
+开发者工具直接利用C++绑定更新
+the dev tool team itself actually edit the c++ bindings for dev tool inside of dev tools
+
+直接可以更新这些样式
+style changes as they make them over here in the styles panel they persist
+
+而且所有更改都保存在磁盘上
+all these changes are kept on persistent disk I can edit anywhere
+
+撤销重做神马的毫无鸭梨
+full undo redo, especially here
+
+这样超赞的 不仅仅可以保存原来的样子
+uh... man this is great because I'm able to maintain my context and not keep
+
+而且不需要一直切换 直接一个地方全部做掉
+switching between two separate things just do it all in one place
+
+好 下一个
+uh...all right, next thing up
+
+Sass在去年的大会上有提到
+sass this was something that I mentioned last year
+
+之后就一直有很多人问我怎么样了
+and a lot of people have been asking about this
+
+今天就更新一下Sass在开发者工具里面怎么运作
+I want to bring you up-to-date with how this works inside of DevTools now
+
+让我打开HTML5 Please
+alright to do this I would bring up a version of HTML5 please
+
+这样就不错
+and this is looking good
+
+比如我想修改一下这个
+but I wanna actually try experimenting with this guy right here
+
+"使用"徽章
+this little use badge
+
+让我打开开发者工具
+so uh... open up the DevTools
+
+然后来修改一下这个徽章的颜色
+you know what I'm gonna try to change the color of it
+
+okay 从这里你能看到
+all right so here we are that's good
+
+"使用"徽章有个background box-shadow和border-right
+the uh... uses got a background box-shadow and border-right
+
+颜色是绿色的然后深绿
+green and getting a little getting darker in the greens as it goes down
+
+让我来换一个颜色
+so if we want to try to change the color
+
+最近比较喜欢紫蓝 说不清楚为什么
+I'm really keen on indigo lately uh... I don't know why, it's cool
+
+嗯 看起来不怎么样
+but that really don't work out well so hot
+
+Command + Z撤销
+hmm...Command + Z
+
+这样不错
+good yes uh...
+
+点击CSS看看
+so if I click through the actual style on CSS
+
+对Sass比较熟的会发现在样式版里面就是
+those of you are SASSies will notice this looks like
+
+编译后非压缩的CSS
+compiled uncompressed CSS coming from the styles panel compiler
+
+但是我应该可以直接修改Sass的对吧
+so what I should really be doing is authoring in SASS
+
+那么我们来开发者工具
+so let's turn that on
+
+设置这里
+we go the DevTools setting
+
+打开Experiments选择Sass stylesheet debugging
+and bring up experiments and turn on Sass
+
+刷新页面
+cool, refresh the page
+
+再次打开开发者工具
+bring back up the DevTools
+
+回到刚刚的地方
+and go back to my selection
+
+第一件事情就是这些属性的右边
+now the first thing that you're gonna notice is pretty small
+
+不是平常的CSS文件, 而是Sass源文件
+is that here against the usual you're seeing the location in the sass file where this is coming from
+
+那我点击进去
+so Imma click through on that
+
+这里是我们的Sass文件
+all right cool so here we are in my Sass file
+
+看起来这里我们有用一个混入
+and uh... looks like use is actually using a mixin
+
+我们需要改变颜色
+uh... but I wanted to change that color
+
+继续往里看
+so we're gonna have to dig a little bit deeper
+
+所以我们回到刚刚的地方 按下Command
+so I come back over here and I hit Command and
+
+你会注意到这些规则现在都可以点击了
+you can now see that these things are a little clickable
+
+那么我按下Command点击background
+so I'm gonna Command + click on background
+
+我们就跳转到混入定义的页面
+and we jump into the extends file where our mixins are defined
+
+background box-shadow border-right什么的颜色都是从这里来
+background box-shadow border-right and yeap the color that's coming in
+
+这里也可以看见颜色被加深了
+right here is in fact is being darkened as it comes down
+
+但是因为$color并不是在这里定义的
+all right that makes sense but again I need to change that color
+
+我们回到Elements Command点击颜色
+and I come back to elements and Command click on the color itself
+
+带我们跳转到_vars.scss文件
+all right so now we are over here in our _vars.scss file
+
+而且光标直接放在这个函数上
+and the cursor is placed immediately where this variable was defined
+
+"使用"的颜色在这里 用的是那个绿色
+so the use one is right here and this is that green and um...
+
+把它改成紫蓝 Command + S保存
+uh... so i want to try it as being indigo, Command + S
+
+不错
+yeah...nice
+
+但是还是那个绿色好看
+it's pretty good but honestly that green color worked the best
+
+
+Command + Z撤销
+so just Command + Z to back my way to that green
+
+刚刚这些都是没有使用Chrome插件
+cool, all right so this is done with no chrome extensions at all
+
+全部都是开发者工具在做
+so this is just straight up DevTools
+
+唯一的一个东西支持就是
+in fact the only thing that I have going on in addition to uh... the Sass support and workspaces
+
+背后的Sass进程在守望这些更改
+is I do have a Sass watch daemon just watching these things
+
+然后实时编译
+and recompile in on-the-fly
+
+其中是由开发者工具来更新这些改变
+but DevTools is doing the work of bringing in the new changes as they come in
+
+这样Sass就有完整的追踪性
+so we have full traceability from my css
+
+包括函数 属性 选择器都可以追踪到他们的原始Sass
+the selectors, properties, and variables back to the original Sass sources
+
+不管是从混入还是函数创建的
+whether came from a mixin or a variable or whatever
+
+这些都使用source maps
+this is actually enabled by source maps I talked about it last year
+
+去年提到source maps 它们就是Javascript
+source maps are javascript
+
+基本上这就是CSS的source maps
+this is the same technology just for css
+
+这项技术是由我们开发者工具团队出的
+uh... and this was contributed to the Sass compiler core by the DevTools team
+
+我也应该提一下 如果你喜欢用Stylus或者Less
+and I should mention that um... if you're not sass user and you like stylus or less
+
+技术上来说没有任何困难
+uh... the limitations are completely agnostic
+
+只要他们开始支持source maps
+so once less or stylus gets support to create the source maps
+
+就可以跟Sass一样运作
+it's gonna work the exact same way
+
+这样样式表的改动都会重写加载
+and a full automatic reload of the stylesheet as changes coming
+
+这些功能加在一起能突飞猛增
+pretty nice so these changes combined really change things up
+
+开发者工具可以变成我的编辑器 我认为这可以变成非常的强大
+DevTools can become my editor uh... I think it's really powerful 
+
+我更新的时候都能实时反馈
+cuz I'm getting this real time feedback as I'm typing as I'm making changes
+
+使用workspaces 改CSS或者Sass都能看到最后的改变
+I see the style changes as I type them out whether in CSS or Sass is persistent to disk by way of uh... workspaces
+
+如果我再修改Javascript的时候我可以看到它立刻执行
+if I'm doing javascript I can edit that and it's re-evaluated on-the-fly
+
+打包送到V8 剩下的都自动运行
+it's patched up to send to V8 and it just takes care of it
+
+(这句话真心没听懂..主要就是那个camus)
+great when you're doing any sort of campus work ?
+
+同时如果你需要修改代码的时候
+uh... in this also cool because when you author code
+
+你发现需要调试你可以直接插入断点
+and you seem to debug environment you can place break point right about the same place ?
+
+这样整个流程就是非常顺畅
+which leads to a great cohesive environment, all right
+
+去年我也讨论了如何管理包裹
+last year I also brought a package management
+
+大概含糊带过去了 (开播了)
+but I covered it in kind of hint wavy way I'm gonna play that
+
+包裹管理从现在起一年后会有很大的改变
+package management is something that in a year from now
+
+我们会有一个很稳固的包裹管理框架
+we're gonna have really robust package management tooling infrastructure
+
+和一个富有包裹的社区
+and a lot of packages in the community
+
+现在只是刚刚介绍给大家
+right now it's kind of still finding its foothold but
+
+我们之后应该会看到更有意思的东西
+we will be seeing some more things coming up soon I think
+
+这个访谈是在Bower发布的前几个星期做的
+yeah uh... was actually just a few weeks before the release of bower
+
+Bower是一个包裹管理框架 这个项目我从一开始就一起做
+bower is a package manager project that I have been involved in since the beginning
+
+之后都发展的很不错
+and it's really been taken off fantastic thing uh...
+
+社区里面有非常多的贡献
+the community in the registry have kind of blown up
+
+来看一下现在的社区
+this is a view of all the components that are in Bower
+
+大概有两千两百个组件
+and it's now up to a little over twenty-two hundred components available in the registry
+
+你想做什么都可以在这找到
+really great for you as a user and whenever you want to pull something
+
+而且依赖已经附带
+and it has dependencies it works great
+
+对于整个生态环境也很不错
+also great for the ecosystem because it means that
+
+让大家可以流畅的合作
+we're able to build upon each other's work in a lot more of a cohesive way
+
+如果想了解更多关于Bower的事情
+if you want to get up to speed on this there was a great presentation about bower
+
+大家可以看看Dan Hoverd在Google IO大会上的演讲
+down in google IO just two weeks ago dan hoverd showed off a lot of great stuff
+
+中间也包括了Bower如何跟RequireJS yeoman以及grunt一起使用
+including a really nice workflow using bower and requirejs also yeoman and grunt
+
+这么棒的体验
+to create this great experience of using package management is something
+
+你可能觉得只有在其他语言里面才有
+that you might expect from another language
+
+现在终于来到JavaScript了
+uh... but having it here inside of javascript for the front end
+
+205
+00:10:28,350 --> 00:10:32,220
+alright wanna come back to performance
+and talking about performance at a 
+
+206
+00:10:32,220 --> 00:10:33,199
+javascript conference
+
+207
+00:10:33,198 --> 00:10:36,149
+uh... i might talk about javascript
+performance
+
+208
+00:10:36,149 --> 00:10:36,700
+but it's
+
+209
+00:10:36,700 --> 00:10:38,990
+good to keep in mind that
+
+210
+00:10:38,990 --> 00:10:40,470
+javascript is not
+
+211
+00:10:40,470 --> 00:10:41,519
+kind of
+
+212
+00:10:41,519 --> 00:10:43,480
+it's not always the best target
+
+213
+00:10:43,480 --> 00:10:47,800
+these are slides from actually from the
+IE team back when they're released
+
+214
+00:10:47,799 --> 00:10:49,469
+IE8
+
+215
+00:10:49,470 --> 00:10:53,620
+but this stuff is as true it was then as it is now
+
+216
+00:10:53,620 --> 00:10:56,830
+up here we have they took a look at the top one hundred sites and saw where
+
+217
+00:10:56,830 --> 00:10:58,930
+IE was spending its time
+
+218
+00:10:58,929 --> 00:11:00,958
+and just sixteen percent of its time was spent
+
+219
+00:11:00,958 --> 00:11:02,149
+in javascript
+
+220
+00:11:02,149 --> 00:11:06,169
+rest of it in layout rendering formatting
+and here for ajax heavy sites like
+
+221
+00:11:06,169 --> 00:11:10,349
+javascript heavy sites like uh... gmail
+google maps
+
+222
+00:11:10,350 --> 00:11:13,350
+uh... just still a fraction
+
+223
+00:11:13,350 --> 00:11:16,759
+so javascript is often a small
+fraction of the overall performance
+
+224
+00:11:16,759 --> 00:11:17,700
+picture
+
+225
+00:11:17,700 --> 00:11:19,819
+so if you want to find out how to make
+
+226
+00:11:19,818 --> 00:11:22,039
+your app your site fast
+
+227
+00:11:22,039 --> 00:11:25,409
+I recommend you take a look at the timeline
+inside the chrome dev tools so
+
+228
+00:11:25,409 --> 00:11:28,309
+uh... I'm gonna show that to you now
+
+229
+00:11:28,309 --> 00:11:29,239
+all right
+
+230
+00:11:29,240 --> 00:11:33,340
+so this is a kind of info graphic parallax site
+
+231
+00:11:33,340 --> 00:11:34,480
+it's pretty cool
+
+232
+00:11:34,480 --> 00:11:38,149
+and I'm just gonna scroll through it so
+you get a chance to see what's going on so as I
+
+233
+00:11:38,149 --> 00:11:43,319
+scroll down I got this orange
+circle bubbly guy and these
+
+234
+00:11:43,320 --> 00:11:44,940
+circles over here where is comes to
+
+235
+00:11:44,940 --> 00:11:47,660
+some awesome physics explosion
+
+236
+00:11:47,659 --> 00:11:48,799
+uh...
+
+237
+00:11:48,799 --> 00:11:53,229
+and then come down here we have a parallax
+effect it's pretty cool I keep going down
+
+238
+00:11:53,230 --> 00:11:55,649
+and uh...keep going down
+
+239
+00:11:55,649 --> 00:11:59,870
+these white little dots form these gride
+and just take over the place
+
+240
+00:11:59,870 --> 00:12:02,039
+and that's about it, all right
+
+241
+00:12:02,039 --> 00:12:05,039
+let's come back up and open up dev tool this time
+
+242
+00:12:05,039 --> 00:12:07,589
+and drag it down to the bottom
+
+243
+00:12:07,590 --> 00:12:09,990
+open up the timeline
+
+244
+00:12:09,990 --> 00:12:12,100
+and i'm gonna start recording
+
+245
+00:12:12,100 --> 00:12:13,329
+just hit Command + D
+
+246
+00:12:13,328 --> 00:12:15,139
+It's kind of quick
+
+247
+00:12:15,139 --> 00:12:19,809
+and then I'm just gonna scroll through
+the same stuff
+
+248
+00:12:19,809 --> 00:12:24,679
+dudu dudu
+
+249
+00:12:24,679 --> 00:12:28,029
+all right, what's really cool about that
+is we get for you the
+
+250
+00:12:28,029 --> 00:12:30,129
+performance of the this page kind of in a 
+
+251
+00:12:30,129 --> 00:12:31,269
+narrative
+
+252
+00:12:31,269 --> 00:12:33,549
+it starts off at the beginning it's pretty chill
+
+253
+00:12:33,549 --> 00:12:36,649
+and then we move on to the sections here
+where there's a lot of green
+
+254
+00:12:36,649 --> 00:12:38,058
+now this is up at the top
+
+255
+00:12:38,058 --> 00:12:40,610
+where we are building out this kind of orange
+
+256
+00:12:40,610 --> 00:12:45,039
+explosion of circles and the green is time spent in paint
+
+257
+00:12:45,039 --> 00:12:48,588
+and here we are painting the entire
+page on every single frame
+
+258
+00:12:48,589 --> 00:12:50,430
+it's taking a good amount of time
+
+259
+00:12:50,429 --> 00:12:53,120
+then going into this section where there's a lot of yellow
+
+260
+00:12:53,120 --> 00:12:54,039
+and this is javascript executing
+
+261
+00:12:54,039 --> 00:12:55,730
+that is when we're hitting
+
+262
+00:12:55,730 --> 00:12:58,940
+uh... this little physics action right here
+
+263
+00:12:58,940 --> 00:13:03,170
+that it's pretty quiet for the section
+in the middle we are hitting our target
+
+264
+00:13:03,169 --> 00:13:06,250
+frame budget of sixty FPS mostly frames stay underneath that
+
+265
+00:13:06,250 --> 00:13:07,539
+for the most part
+
+266
+00:13:07,539 --> 00:13:10,669
+and then down at the bottom we kind of have
+this cacophony of colors
+
+267
+00:13:10,669 --> 00:13:13,919
+a lot of things happening as this kind of
+white things exploding
+
+268
+00:13:13,919 --> 00:13:18,860
+uh... both painting javascript and also
+a good amount of a purple layout here
+
+269
+00:13:18,860 --> 00:13:21,120
+uh... is going on
+
+270
+00:13:21,120 --> 00:13:24,659
+but timeline is giving us this overall
+view of finding where our bomb are ?
+
+271
+00:13:24,659 --> 00:13:27,860
+of each section so we can deal with a bit
+more precise in how we adjust these
+
+272
+00:13:27,860 --> 00:13:29,110
+performance issues
+
+273
+00:13:29,110 --> 00:13:30,810
+so if I wanna look into
+
+274
+00:13:30,809 --> 00:13:36,319
+this section right here I'm gonna do that
+so let's see right here
+
+275
+00:13:36,320 --> 00:13:41,300
+uh... and I want to get a better idea of
+this javascript performance
+
+276
+00:13:41,299 --> 00:13:43,490
+so let's do that
+
+277
+00:13:43,490 --> 00:13:48,919
+I'm gonna go over to profiles and collect a CPU profile
+
+278
+00:13:48,919 --> 00:13:51,789
+Hit Command + E
+
+279
+00:13:51,789 --> 00:13:53,709
+and
+
+280
+00:13:53,710 --> 00:13:54,970
+it's probably good
+
+281
+00:13:54,970 --> 00:13:58,470
+and now if I come over here and uh...
+
+282
+00:13:58,470 --> 00:14:00,480
+so this you should be used to
+
+283
+00:14:00,480 --> 00:14:03,450
+kind of the aggregate view of everything that's going on
+
+284
+00:14:03,450 --> 00:14:08,320
+and it is telling me kind of here are
+all the things that happened information
+
+285
+00:14:08,320 --> 00:14:10,010
+well what it's not doing it is
+
+286
+00:14:10,009 --> 00:14:13,559
+giving it to me and kind of this view
+I could see frame by frame
+
+287
+00:14:13,559 --> 00:14:16,959
+what happened bit by a bit
+
+288
+00:14:16,960 --> 00:14:20,110
+so this is we found we can
+address and also give you a better idea as
+
+289
+00:14:20,110 --> 00:14:20,919
+far as
+
+290
+00:14:20,919 --> 00:14:22,748
+of visualization of this action
+
+291
+00:14:22,749 --> 00:14:25,279
+so I want to show it to you a new feature
+
+292
+00:14:25,279 --> 00:14:29,019
+and it's called the flame chart
+
+293
+00:14:29,019 --> 00:14:29,990
+uh...all right
+
+294
+00:14:29,990 --> 00:14:32,279
+so here we have the flame chart
+
+295
+00:14:32,279 --> 00:14:36,759
+we're able to identify kind of at
+time scale across time how things are
+
+296
+00:14:36,759 --> 00:14:39,629
+changing in this case it's actually pretty consistent
+
+297
+00:14:39,629 --> 00:14:43,189
+um... frame by frame looks like it's
+mostly executing the same javascript
+
+298
+00:14:43,190 --> 00:14:44,820
+it would change color if not
+
+299
+00:14:44,820 --> 00:14:46,290
+uh... and then it also 
+
+300
+00:14:46,289 --> 00:14:49,709
+drill in so this is one frame in particular
+
+301
+00:14:49,710 --> 00:14:50,790
+and
+
+302
+00:14:50,789 --> 00:14:53,009
+in this case uh...
+
+303
+00:14:53,009 --> 00:14:53,889
+width is time
+
+304
+00:14:53,889 --> 00:14:57,179
+and height is call stacks so height's not too important
+
+305
+00:14:57,179 --> 00:14:58,339
+but umm
+
+306
+00:14:58,340 --> 00:15:02,460
+if I wanna look in I can see a few things let's say
+
+307
+00:15:02,460 --> 00:15:04,030
+uh... here
+
+308
+00:15:04,029 --> 00:15:07,429
+looks like D3 is kind of running
+the show all my time to spend inside D3
+
+309
+00:15:07,429 --> 00:15:08,419
+
+310
+00:15:08,419 --> 00:15:12,779
+we got some insert child so it's doing some SVG inserting
+
+311
+00:15:12,779 --> 00:15:19,240
+uh... and then we have this quadtree view 
+quadtree view quadtree view quadtree view
+insert child
+
+312
+00:15:19,240 --> 00:15:23,110
+but also inserting attribute function just
+settings new attributes in the SVG at the
+
+313
+00:15:23,110 --> 00:15:24,600
+end of the frame
+
+314
+00:15:24,600 --> 00:15:27,960
+this is a seven milliseconds in this case
+which is a considerable amount of time
+
+315
+00:15:27,960 --> 00:15:29,720
+to happen every single frame
+
+316
+00:15:29,720 --> 00:15:33,600
+but this visualization is giving me a great view as far as what is soaking up this
+
+317
+00:15:33,600 --> 00:15:37,790
+time and what should i address first
+
+318
+00:15:37,789 --> 00:15:39,659
+so that's the new flamed chart
+
+319
+00:15:39,659 --> 00:15:41,699
+you can check it out in chrome canary today
+
+320
+00:15:41,700 --> 00:15:46,090
+uh... we also have a canvas profiling
+experiment that I want to show to you now
+
+321
+00:15:46,090 --> 00:15:51,850
+so this here just this webGL aquarium
+and Imma open up the dev tools
+
+322
+00:15:51,850 --> 00:15:56,779
+and take a canvas profile so it's
+gonna record single canvas frame and
+
+323
+00:15:56,779 --> 00:16:00,500
+it's recording all the calls that
+contributed to that frame
+
+324
+00:16:00,500 --> 00:16:04,129
+and poke through all the draw calls
+one-by-one and just hitting the down arrow
+
+325
+00:16:04,129 --> 00:16:06,090
+on the keyboard walking through
+
+326
+00:16:06,090 --> 00:16:09,360
+how the scene was actually drawn so you can see
+
+327
+00:16:09,360 --> 00:16:11,820
+the fishes come in and the shark come in
+
+328
+00:16:11,820 --> 00:16:15,670
+the the the ball kind of come in
+and everything else
+
+329
+00:16:15,669 --> 00:16:18,639
+and then you open up the draw calls
+and see all the function calls
+
+330
+00:16:18,639 --> 00:16:20,259
+that contributed to that draw
+
+331
+00:16:20,259 --> 00:16:21,950
+and go back to the sources
+
+332
+00:16:21,950 --> 00:16:26,210
+so this is cool but this is a platform
+this is we are able to record and replay
+
+333
+00:16:26,210 --> 00:16:28,120
+canvas and webGL action
+
+334
+00:16:28,120 --> 00:16:30,568
+uh... but really where we go from here
+
+335
+00:16:30,568 --> 00:16:34,358
+is up to you and so please wrench in
+your feedback in kind of what you would
+
+336
+00:16:34,359 --> 00:16:38,889
+like to see next as far as a canvas profiler
+
+337
+00:16:38,889 --> 00:16:42,649
+all right I'm gonna wrap-up with five key
+dev tools performance features
+
+338
+00:16:42,649 --> 00:16:44,970
+first up continuous repaint mode
+
+339
+00:16:44,970 --> 00:16:49,009
+if you're in the timeline you see a lot
+of time spent inside green painting
+
+340
+00:16:49,009 --> 00:16:51,850
+then you probably wanna head over t
+continuous repaint mode what it's gonna do
+
+341
+00:16:51,850 --> 00:16:52,999
+is tell the browser
+
+342
+00:16:52,999 --> 00:16:55,759
+hey paint the page again and again and again
+
+343
+00:16:55,759 --> 00:16:58,730
+and what this allows you to do is turn off elements and styles
+
+344
+00:16:58,730 --> 00:17:01,789
+and figure out what is contributing to the
+amount of time that it takes to paint
+
+345
+00:17:01,789 --> 00:17:02,769
+the page
+
+346
+00:17:02,769 --> 00:17:06,709
+uh... and this is able to uh... to let
+you find out what's contributing what you
+
+347
+00:17:06,709 --> 00:17:11,230
+could adjust uh... it the changes so
+it's a it's a little tough to
+
+348
+00:17:11,230 --> 00:17:12,470
+given aggregate view of
+
+349
+00:17:12,470 --> 00:17:15,329
+but you're able to find out exactly
+what's contributing there
+
+350
+00:17:15,329 --> 00:17:19,269
+and also the FPS Meter um... which
+gives you a good view of how fast you're
+
+351
+00:17:19,269 --> 00:17:21,029
+sending updates to the screen
+
+352
+00:17:21,029 --> 00:17:24,930
+so in addition to showing the frames per second
+we also have min and max in that view
+
+353
+00:17:24,930 --> 00:17:26,110
+and a histogram
+
+354
+00:17:26,109 --> 00:17:29,298
+also the GPU memory so you can see how much memory
+
+355
+00:17:29,298 --> 00:17:33,388
+is being used by the current tab, how
+much is allocated if you have a lot of
+
+356
+00:17:33,388 --> 00:17:36,308
+heavy imagery you're going to constantly
+evicting things out of the GPU
+
+357
+00:17:36,308 --> 00:17:40,930
+memory which is probably gonna soak up a good amount of GPU performance
+
+358
+00:17:40,930 --> 00:17:45,140
+uh... next up show paint rects and layer borders
+these are available as settings inside
+
+359
+00:17:45,140 --> 00:17:45,969
+dev tools
+
+360
+00:17:45,969 --> 00:17:49,940
+really great at identifying paint 
+issues so you might be repainting
+
+361
+00:17:49,940 --> 00:17:52,750
+the entire page on every single scroll
+
+362
+00:17:52,750 --> 00:17:55,779
+you don't wannna to do that and this is
+going to show you a visual view of that
+
+363
+00:17:55,779 --> 00:17:58,979
+happening really fast in this case uh...
+it looks like
+
+364
+00:17:58,979 --> 00:18:01,058
+this div was just repainted and we have
+
+365
+00:18:01,058 --> 00:18:04,569
+uh... a layer over here with the gold border
+
+366
+00:18:04,569 --> 00:18:08,500
+it's actually the scrollbar which
+chrome actually composites right on
+
+367
+00:18:08,500 --> 00:18:11,210
+top of the page
+
+368
+00:18:11,210 --> 00:18:14,890
+the object allocation trackers a brand
+new tool if you're doing a lot of memory
+
+369
+00:18:14,890 --> 00:18:18,440
+analysis this is going to key for you so
+you hit a do recording and it's gonna take
+
+370
+00:18:18,440 --> 00:18:24,490
+continual heap snapshots over time
+that's how it identifies drillin on one specific part
+
+371
+00:18:24,490 --> 00:18:28,240
+to see what objects were allocated in that section
+
+372
+00:18:28,240 --> 00:18:31,250
+and what they retain size and what they
+retaining tree which is great even try
+
+373
+00:18:31,250 --> 00:18:35,240
+to identify where your memory is coming
+from and where it's going
+
+374
+00:18:35,240 --> 00:18:40,190
+lastly layout thrashing back in uh...
+this timeline here
+
+375
+00:18:40,190 --> 00:18:43,470
+we see a good amount of time spent in
+layout
+
+376
+00:18:43,470 --> 00:18:47,519
+and here we're able to identify a
+bunch of stuff have you had a DOM heavy
+
+377
+00:18:47,519 --> 00:18:49,210
+web applications
+
+378
+00:18:49,210 --> 00:18:53,170
+you might see something like this where
+you doing layout and layout and layout
+
+379
+00:18:53,170 --> 00:18:56,410
+and there's no paint you do it all this
+work and you're asking browser to do all this
+
+380
+00:18:56,410 --> 00:18:57,220
+work
+
+381
+00:18:57,220 --> 00:19:02,100
+and the users never seen a lot of it and
+this is a problem dev tools is gonna
+
+382
+00:19:02,099 --> 00:19:06,000
+tell you that with this little icon that there is
+possible performance bottleneck
+
+383
+00:19:06,000 --> 00:19:09,730
+uh... this is also gonna give you
+a lot of other useful information too
+
+384
+00:19:09,730 --> 00:19:13,500
+the amount of nodes that need layouts
+the tree size the scope
+
+385
+00:19:13,500 --> 00:19:18,150
+and also a full call stack for why the
+layout was invalidated why it was forced to
+
+386
+00:19:18,150 --> 00:19:22,030
+conjoint as functions and find exactly
+why things were caused maybe you're gonna need
+
+387
+00:19:22,029 --> 00:19:24,119
+to change some things around
+
+388
+00:19:24,119 --> 00:19:27,639
+so a lot of details and this is key to getting good performance on web
+
+389
+00:19:27,640 --> 00:19:29,299
+applications
+
+390
+00:19:29,298 --> 00:19:33,420
+okay that's a lot of stuff the chrome tools documentation 
+has recently got a bunch of
+
+391
+00:19:33,420 --> 00:19:37,070
+new updates covering these things
+and a bunch more including remote
+
+392
+00:19:37,069 --> 00:19:41,829
+debugging everything i show today uh...
+is available as you remote debug your
+
+393
+00:19:41,829 --> 00:19:46,308
+phone uh... so it's a really powerful
+setup and I encourage you to check that out
+
+394
+00:19:46,308 --> 00:19:50,259
+uh... everything I should today is also
+available in canary some of them behind
+
+395
+00:19:50,259 --> 00:19:54,220
+experiments but I encourage you to check out
+try things holler at me and tell me what
+
+396
+00:19:54,220 --> 00:19:57,860
+you like what you don't like uh... and uh... it'd be good
+
+
+最后 非常感谢大家
+but thank you guys very much
