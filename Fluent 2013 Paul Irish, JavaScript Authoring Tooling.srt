@@ -421,16 +421,16 @@ and you seem to debug environment you can place break point right about the same
 这样整个流程就是非常顺畅
 which leads to a great cohesive environment, all right
 
-去年我也讨论了如何管理包
+去年我也讨论了如何管理包裹
 last year I also brought a package management
 
 大概含糊带过去了 (开播了)
 but I covered it in kind of hint wavy way I'm gonna play that
 
-包管理从现在起一年后会有很大的改变
+包裹管理从现在起一年后会有很大的改变
 package management is something that in a year from now
 
-我们会有一个很稳固的包管理框架
+我们会有一个很稳固的包裹管理框架
 we're gonna have really robust package management tooling infrastructure
 
 和一个富有包裹的社区
@@ -445,7 +445,7 @@ we will be seeing some more things coming up soon I think
 这个访谈是在Bower发布的前几个星期做的
 yeah uh... was actually just a few weeks before the release of bower
 
-Bower是一个包管理框架 这个项目我从一开始就一起做
+Bower是一个包裹管理框架 这个项目我从一开始就一起做
 bower is a package manager project that I have been involved in since the beginning
 
 之后都发展的很不错

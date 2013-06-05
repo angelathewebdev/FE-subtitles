@@ -1,0 +1,779 @@
+how many of you fine people were here last year
+
+good mix we'll go quickly over stuff that's old and try to get to the new
+
+so Javascript is 18 this month I think it was
+
+I reconstructed the dates I lost my notes and computer from that era long ago
+
+but I had 10 days in May to do something that became more than a demo
+
+and became the first version of Javascript
+
+and I've been playing for ever since but
+
+now it's not my responsibility it's 18 so
+
+it can go out and it can vote, join the navy, get drunk, gamble in most states
+
+and I think it's good because people have figured out how to
+
+evolve Javascript this is a theme I'll come back to later
+
+Javascript being done in such a rush I had to make it mutable and extensible
+
+that's why it's so prody(?) you can make it into what you want
+
+you can make it look like ruby if you want
+
+there are of course other ways to compile Javascript
+
+we'll talk about that too
+
+but Javascript is everywhere right now
+
+and we have a healthy standard process this was hard-thought 
+
+somebody recently ran into our standards group in a larger settings
+
+and said wow you guys seem like a family that's been through a lot together
+
+that's very true
+
+and we're working pretty effectively
+
+among all the major browser vendor, yahoo, adobe is in there again, it's good
+
+and it's all about HTML these days great
+
+so I have some demos to show
+
+the goals of standardized evolving version of Javascript
+
+we try to do everything in concensus as we go
+
+we don't try to surprise each other in standards body
+
+or people would get grumpy at dinner
+
+it's to be a better language for applications
+
+we're seeing a lot of applications being written in various scale
+
+you have to be able to start small with Javascript but then get big
+
+and getting big is not what it was designed for
+
+so we're evolving it
+
+that means you also want libraries
+
+you want to be able to break your code into modules
+
+there already are lots of great libraries like jQuery of course but
+
+they were making do with Javascript as it was standardized over a decade ago
+
+and it's moving again so we have to look at where are the gaps in the language
+
+that make it hard for library authors to ensure that they can be reliable
+
+that their library work the way they intend
+
+and we're also looking at code generators
+
+so for the first two points
+
+I wanted to say people thinks it takes years to get a new standard
+
+I can't wait it turns out you don't have to wait
+
+the way HTML5 which we rebooted in 2004 among Apple, Opera, Mozilla
+
+then got back into what W3C, somewhat later,
+
+and the Javascript standard, ECMAScript work is that you work in a committee
+
+and you work in your browser to develop new ideas and prove them 
+
+you try to talk about them and specify them as you go
+
+so you end up with implementations already in the major browsers
+
+and it turns out there's lots of stuff coming
+
+this was leaked from Internet Explorer 11 from a fairly early build it seems
+
+and there was all sorts of great stuff coming from ES6
+
+it's even going to be in IE11
+
+can't speak for Microsoft but I believe it
+
+I read it on the web
+
+even webGL is there 
+
+so awesome, Microsoft got onboard with webGL that's very important
+
+I'll show why is that in a minute
+
+there is also Kangax's great table
+
+he did this for ES5, the last version of standard
+
+he's got one for ES6
+
+a lot of red there but if you look at
+
+I'm running Firefox Nightly that first column on the left
+
+shows a fair amount of green coming in so
+
+we're prototyping in Firefox
+
+Chrome is prototyping too
+
+and I think some of this red is almost green in Chrome
+
+so it's getting there
+
+we'll see about Javascript core and Safari
+
+that may take a little longer but they're working on it too
+
+and so don't despair you don't have to wait
+
+you can use new browsers if you leading edge site or mobile content site
+
+you see newer versions faster
+
+let me talk about some of the things I haven't talked about I didn't talk about a year ago
+
+arrow functions are a concise function syntax
+
+people complained about 8 letter keyword function
+
+and all the further typing you have to do to return a value
+
+you have to type curly brace, return, space, more and a closing curly brace 
+
+that's at least you have to type
+
+that's at least 15, 16, 17 characters
+
+that's too much so inspired by other languages
+
+you find arrow functions in a lot of languages
+
+we finally managed to get these standardized in ES6
+
+it took a lot of doing because people didn't want to add the thin arrow
+
+the coffeescript(?) tags so we only added the fat arrow
+
+and it saves you from having to worry about the meaning of this is
+
+you don't get into pronoun trouble
+
+you can have either an expression or the brace body
+
+the brace body wins so the empty function is a brace body not object literal
+
+if you want to use a shorthand inside object literal
+
+there is the method shorthand
+
+so instead of update colon function you just
+
+drop the colon and the function and use update
+
+that's handy and it will come in classes
+
+classes are controversial
+
+I first started talking about them in 2006
+
+people accused me of trying to turn Javascript into JAVA
+
+which I would never do
+
+but the committee's wanted for a long time to do 
+
+what languages like Coffeescript do
+
+and that is to make it easy to write prototypal inheritance pattern
+
+right now you use functions you have to set the prototype
+
+and be careful on how you do super classes
+
+there's some hassels it looks like this when you write it by hand
+
+and that's only one way of doing it
+
+there's lots of choices and lots of ways to go wrong
+
+so it's a lot nicer to have classes syntax
+
+it does de-sugarize it turns from that sweeter syntax into the stuff you know
+
+it interoperates great with existing libraries
+
+you can mix and match you can compose you can even do it
+
+assuming you get the standardized this one is still kind of on the fence
+
+you can even do it using this object of mixin API
+
+looks a lot like that class but it's all done through calling an API
+
+which means you can do it in all the browsers without
+
+getting a compiler to handle the new syntax
+
+we're also doing modules this is extremely important for dealing with programming at large
+
+as you scale your applications, your libraries up
+
+you end up wanting to make walls or fences between the modules
+
+so you know what's on the inside and what's on the outside
+
+you separate the exports from the internals
+
+and clients have to import what's exported and only that
+
+and you actually get some checking to make sure that you didn't misspell a method name
+
+and it's very much responsive to what's going on in the NPM
+
+and the AMD or RequireJS world where we're tracking the use cases and trying to match them
+
+so we hope to have smooth migration paths forward from those module systems
+
+that we build sort of using scotch tapes and wire and whatever that was lying around Javascript that it is today
+
+having a real module system lets you do more
+
+it fills in gaps in languages let you have error checking that's cool
+
+I brought it up quickly here because I didn't want to go over the minor details
+
+one of the things in Javascript that annoys people is that
+
+every name in an object is equivalent to a string
+
+even the array indexes like 0 1 2 are like string
+
+and there is no way to avoid colliding except to make up random names
+
+we've added something that people may recall from the list language
+
+and other language they come from is a symbol
+
+it's a unique non-string name you can not spell it with any string or collide with anyone
+
+and here's an example where just by calling Symbol() you got a fresh unique identifier
+
+and its typeof says it's a Symbol so you know it's not an object or string and
+
+it behaves differently. it's a special case to extend object prototyping
+
+in this example without fear of collision into anybody
+
+and you can share the symbol with others you can use it to cooperate with that collision
+
+some of this is now turned on by default in Chrome that's in Firefox
+
+that's in V8 and Chrome I think under a flag but I think it should be off soon
+
+it's getting settled as we standardize the pieces to go into ES6
+
+they start to get turned on by default and they interoperate
+
+that way we know we have a good step we know there are people who are actually using them
+
+so here is default parameters
+
+if you ever get tired of getting into arguments object to see
+
+what was really passed to you cuz you don't know your function takes a variable number of arguments
+
+now you can assign default value you can actually referred to parameters to their left
+
+they are evaluated in the context of the activation function
+
+you don't get any funny business like in Python where they are evaluated once when the function evaluates
+
+rest paramters are another improvement over the arguments object
+
+some day I hope we can just put a stake through the arguments object hard 
+
+and I'll do the hammering
+
+so rest parameters are a way of writing ... in the name
+
+and that captures all the trailing arguments in a real array
+
+as you can see we don't have to hassel with Array.prototype.slice.call of arguments
+
+and that's sweet and there is a duo of rest which is kind of a limited operator or special format
+
+... followed by some kind of iterable expression
+
+in certain context like in an array initializer in a square brackets
+
+or in an actual parameter list like in the call to f inside g there
+
+you can take the ... spread the value of that array out
+
+in the actual parameter actual element initializer literals
+
+so these things are really complementary to each other
+
+and help us get rid of the arguments object
+
+and they help us compose arrays in more flexibly than calling method
+
+and I mentioned iterables we have a new form of iterations this is
+
+instead of for/in which goes over the names or keys of an object
+
+names or properties that are enumerable
+
+now you can iterate in a flexible extensible way
+
+there is a protocol for it you can extend your objects to do whatever it makes sense
+
+you can get batteries (?) included in object arrays like in this example
+
+instead of saying for v in that array where you get 0 1 2 strings
+
+you get the actual values 1 2 3 as numbers
+
+finally I mentioned object being a little bit funky because they used names that eqate to strings 
+
+and this new symbols idea, we're adding something called map
+
+which let you map values to values
+
+so you can have objects as keys
+
+you can have different keys like a string key, named string key in that example map.set
+
+you can have numbers as keys, booleans all the values can be used as keys
+
+and they don't get converted to strings
+
+and you can timeout(?) between rows of map if you want
+
+and you can delete it
+
+there is a size and for/of loop to iterate over them
+
+if you don't want to use a map for a set
+
+you can use a set directly that saves you from having to figure out what values the key should have, just the element to set, just like in school
+
+and then we have something called weak map
+
+I won't get hung up it it just avoid leaks during certain cases
+
+it's a smarter way of managing tables where you might have a knot tied between the entries in the tables keys of value
+
+and it will not leak memory as much as map will
+
+none of these abstractions will lead to a permanent loss of memory
+
+you still have the garbarge collector, you still can kill the map and get rid of all the storage
+
+the weakmap is actually more efficient about collecting partial garbage inside of itself that's not reachable even if it's tied to a knot
+
+and a proxy this is too much for this talk
+
+but proxy are another powerful way to do meta programming
+
+which is to say programs about program
+
+you can change the language you can add your own magic objects
+
+it used to be the DOM and the so called host objects like IE's alert function were magic
+
+now you can make your own
+
+this is not a bad thing it actually let us tame the crazy DOM and host objects
+
+and kind of bring together the magic that was built-in and the non-magic that you were limited into in an old version of the language
+
+and put them in the same footing so we can help you make libraries that are as expressive as the DOM
+
+that can substitute for the DOM you can do mocs
+
+it's important to have this facility even though it's kind of low level
+
+and here is an example that shows no such method
+
+something that I added quite a long time ago
+
+you can actually emulate that with proxy
+
+so the next part of this talk is going to be able code generation
+
+since Javascript is so ubiqutous and becoming so fast
+
+people are writing compilers from other languages to it
+
+that's fine
+
+Javascript is not by far the ideal language
+
+it's a little bit verbose it's a little bit wordy from the old days from the rush
+
+in AJ team now you can go get cosmetic surgery
+
+but it's hard to take things away from what you generally extend the language with new things
+
+and let the old things die off
+
+so people who want to use different language should be able to and they are using compilers or what's called transpilers or trans-compilers
+
+so I'm gonna switch to the talk about how this works in particular when you're dealing with games
+
+and c++ and c, very low level languages 
+
+didn't think this was possible until a few years ago when somebody did, this Alon Zakai in research developed EMScripten which was compiler from C or C++ to Javascript
+
+and it turns out it actually works
+
+I'm going to demo something we showed at GDC with Epic Games
+
+it's to demonstrate that you can run AAA games
+
+and the tools that gets you there the Javascript subset that gets you there
+
+why AAA games? I used to go to GDC and I had this dream of doing computer games instead of browsers
+
+I don't think that's ever gonna happen
+
+but it was really cool and informative
+
+one of the years I heard a talk of valve's CTO
+
+and he said we have to use all the hardware
+
+we're in a competitive market we have to use the GPU the parallel hardware
+
+it turns out games really do everything
+
+if a browser can run a high end AAA games and work
+
+it's like if you can dodge a ranch you can dodge a ball
+
+so this is a real ACID test for the browser
+
+you wouldn't think it would work you would think the web is too slow
+
+we know better now we added things going back to HTML5 in 2004
+
+canvas, audio, but audio was like a single shot objects not good for games
+
+then webGL came in, that's really good for games, that's one of those low level APIs that lets you port existing openGL games for instance
+
+and with webGL came typed arrays very important will get to those
+
+and a bunch of other things and storage and new API like pointer lock
+
+and then things got really crazy recently we have webRTC working with the Chrome guys on
+
+for n-way latency like better than Skype audio, video, and data communication
+
+so multi player game applications want this
+
+web audio very good low level positional multi shot effects
+
+and you put it together and you say wow I can really do some awesome work porting a game to this
+
+but I still have Javascript what am I going to do
+
+I have all these great games written in C C++ these low level languages
+
+well the answer is EMScripten to compile Javascript from C++ or C
+
+and ASM.js something, I'm not sure how to pronounce by the way
+
+ASM.js for targeting a version of Javascript a subset of Javascript
+
+not anything non-standard yet, to get really fast performance
+
+in GDC we talked about only twice as slow as native code I have even better news today
+
+I have this awesome platform is here and you can reach from native code
+
+all these games were written in a million line code basis can run efficiently
+
+let's see what that looks like
+
+one of the things we were working on is code loading
+
+so there is a bit of pause loading here
+
+this is Epic Games Sanctuary levels from Unreal Tornament
+
+and it's running without a plugin
+
+and I remember a year ago I showed up at the enter brid (?) demo game
+
+it was so funny rabbit squire which was fun
+
+this is a real game this is unreal engine 3
+
+plugin-free compiled from c++ to Javascript
+
+and here is a bit of fly through
+
+(playing games)
+
+unreal engine 3, we're working on unreal engine 4, which is super awesome it's unbelievable
+
+it's epic games come swinging, kudos to them
+
+let me get out of here
+
+so you didn't think that was possible
+
+and it wasn't possible a year ago
+
+and just to say how hard it was
+
+we spent about 4 months I think
+
+with one engineer on the Javascript team, Alon Zakai in research
+
+the Javascript guy was Luke Wagner,
+
+Dave Kerman did the type system and RasmJS to prove everything it could be safely compiled to assembly code
+
+and then we went to epic and rawly for 5 days and we poured the engine for 4 of 5 days
+
+and they couldn't believe it was so fast
+
+so shortest path evolution works I keep saying on Hackernews and people don't believe me and they should
+
+so how does this works? and why Javascript?
+
+you think we can do better with JAVA or Flash
+
+plugins seem to be dying and the mobile web is killing plugins among other things
+
+Javascript is everywhere it's nearly ubiqutous it's in television
+
+and the web is starting to be important in television even though
+
+it's the big screen and you consume more than you interact
+
+but it's coming and it could be really fast
+
+we know this ever since 2008 when novia and spidermonkey and javascript (?) started this performance race
+
+and it's combinated in crazy performance even for dynamic Javascript not for this ASM.js subset
+
+you look at games you look at these investments
+
+they need to use a language like C++ and they've been using it already
+
+they have to port it to other platform
+
+it's the right low level runs everywhere by compiling ahead of timeline
+
+so there is no way they're going to rewrite this in Javascript
+
+if they rewrote this in Javascript it would get slower I'm here to say that
+
+but by using a compiler, you can generate this low level Javascript and you get much better result
+
+you get speed even a moderate engine with plain old Javascript
+
+everybody recognizes that things got really fast
+
+you can tell this loop up to some limit is going some numbers
+
+maybe it's going over integers and you can speculate that with V8 and spidermonkey like other engines do
+
+but you can do even better with memory if you can model with one of these typed array
+
+see that int32 that's one of the webGL's typed array and it's pretty big
+
+so make a big one, pretend it's your memory and suddenly you've got fast low level access
+
+you're treating each unit of memory as 32 bit integer
+
+you can treat it as a byte if you want, you can actually treat it as either
+
+so it starts your mind as assembly code (?) you may have to deal with
+
+if you're programmer as old as me
+
+and when you generate Javascript from C++
+
+C++ is a typed language so apart from unsafe cast
+
+you actually have well typed Javascript
+
+the engines can eat that up even better if it knows what type it is, it can verify that quickly
+
+and that's part of what we're doing
+
+we're making a version of Javascript that's verifiable
+
+if you don't do this you're gonna get into trouble
+
+you have a very large code base you get garbage collection pause
+
+you get mis-speculation I think it's an integer but I was wrong so I give up or it's a number, it's an object, it's any type
+
+and it starts to slow down. You get recompilation Oh I speculated wrong it was an integer, and now it's a double precision number and now I'm going to recompile
+
+that hurts game player especially you get game lag and game pauses
+
+with ASM.js you get none of that you get predictable performance
+
+no garbage collection all your memory is in this big typed array
+
+that matters you still have a stack for fast function calling
+
+you have a JIT of state integer types
+
+you have double type, state double types
+
+we have even extend the language for this
+
+we could look at this and have floating 32 bit type very important for GPU programming
+
+and it's compatible so far, if we get beyond this it will be evolving Javascript to make ASM.js
+
+still be a subset but still new affordance like floating 32 bit
+
+because it's a subset we can optimize it
+
+it already runs pretty well so those demos there were some bugs to fix in Chrome but
+
+they show actually run on Chrome but they run a little slower
+
+and that we're used to we're used to performance with each other
+
+where we catch up and we're hopeful and there is a bug open and there is some work to make ASM.js go faster
+
+and at Google IO they talked about some improvement
+
+so I'm gonna make some the latest V8 numbers to show that they have made improvement
+
+still not fast as spidermonkey in Firefox 
+
+what does it look like? it looks like this
+
+you see those vertical bars with 0
+
+that's the bitwise OR operator
+
+something I added in ASM.js it was in C JAVA and it should be Javascript
+
+it's a good thing I added cuz it let's you say
+
+hey this is really an integer or 0
+
+you're converting pointer or that variable there to store back itself to integer
+
+and once you know that then it dominates all uses of pointer
+
+then you know it's an integer forever you don't have to worry about mis-speculations
+
+and there are other compiler mandril that do this too
+
+so it's important to get this level of performance for games
+
+we wouldn't have it if we just used dynamic Javascript
+
+I've seen people rewrite from C++ to Javascript and get into garbarge collection trouble and mis-speculation troubles
+
+here is the latest benchmark results blue is Firefox red is Chrome
+
+I think bleeding edge
+
+and you see through micro edge benchmark
+
+the first 9 were actually in one case is suppose to be faster than native code
+
+I guess it was a cling(?) bug I think GCC is faster than either Firefox or Chrome
+
+but from these micro edge benchmark you can already get close to the 1 on the x axis
+
+which means the same speed as native
+
+the real test is the larger benchmark related to box2d, bullet engine, JAVA-nbody, lua binary tree, lua scimark, zlib
+
+these are really chunky pieces of code
+
+they are not trivial
+
+the code doesn't really fit in the cache
+
+and you can see the blue Firefox is actually 2 - 3 times slower than native code to be right now
+
+that was something we didn't know we could do a year ago
+
+that means we're in spitting distance of code speed yet
+
+with the reach of the web which everybody want
+
+game publishers want that they do not want to have a plugin users have to download and install
+
+with a scare dialog and lost user acquisition when user say I just don't want a plugin
+
+they want the web and now the web can do it
+
+1.33x that's the figure merit
+
+we were at the GDC and it was 2x
+
+so it's pushing toward 1. small change x
+
+closer to native
+
+and I think we'll get there in certain in certain programs
+
+but it's not for hand coding
+
+I know people who tried to do this
+
+a guy in Github was doing it by hand was actually doing a good job
+
+ASM.js is like assembly code, don't listen to pointy hair boss and write it by hand
+
+if you do look into Javascript console and you see you make a mistake
+
+you can see a verification failure, it's really for compilers
+
+that's why we were able to show grey wind, epic games, GDC, that I showed you today
+
+Javascript can run in C C++ big games
+
+Javascript being a compilation target to Coffeescript and other languages of that sort
+
+Javascript evolving as a good language for people to use on it's own merit makes me think
+
+that Javascript is evolving and the web evolving
+
+and you may object that sometimes evolution proves us Pelcan looks like a urinal 
+
+that Pelcan is a beautiful creature and it's happy
+
+the web is actually evolving in a healthy way if we only collaborate on it as we try to do the Javascript standard on HTML5 the web audio
+
+the web can do anything
+
+I say always bet on evolution
+
+maybe a little less catchy than I usually close with which is
+
+I always bet on JS
