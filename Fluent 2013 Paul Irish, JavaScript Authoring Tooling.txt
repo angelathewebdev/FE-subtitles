@@ -490,853 +490,499 @@ that you might expect from another language
 现在终于来到JavaScript了
 uh... but having it here inside of javascript for the front end
 
-205
-00:10:28,350 --> 00:10:32,220
+那好, 我们回到性能问题上面
 alright wanna come back to performance
-and talking about performance at a 
 
-206
-00:10:32,220 --> 00:10:33,199
-javascript conference
+在一个Javascript大会上
+and talking about performance at a javascript conference
 
-207
-00:10:33,198 --> 00:10:36,149
-uh... i might talk about javascript
-performance
+肯定要讨论Javascript性能问题
+uh... I might talk about javascript performance
 
-208
-00:10:36,149 --> 00:10:36,700
-but it's
+但是要注意的是
+but it's good to keep in mind that
 
-209
-00:10:36,700 --> 00:10:38,990
-good to keep in mind that
+Javascript不一定总是性能问题的根源
+javascript is not kind of it's not always the best target
 
-210
-00:10:38,990 --> 00:10:40,470
-javascript is not
+我们来看一下IE团队推出IE8时候的出的一份报告
+these are slides from actually from the IE team back when they're released IE8
 
-211
-00:10:40,470 --> 00:10:41,519
-kind of
-
-212
-00:10:41,519 --> 00:10:43,480
-it's not always the best target
-
-213
-00:10:43,480 --> 00:10:47,800
-these are slides from actually from the
-IE team back when they're released
-
-214
-00:10:47,799 --> 00:10:49,469
-IE8
-
-215
-00:10:49,470 --> 00:10:53,620
+这东西虽然旧但是内容到现在还是很正确的
 but this stuff is as true it was then as it is now
 
-216
-00:10:53,620 --> 00:10:56,830
-up here we have they took a look at the top one hundred sites and saw where
+这里指出了在前100个访问最多的网站执行的过程中
+up here we have they took a look at the top one hundred sites and saw where IE was spending its time
 
-217
-00:10:56,830 --> 00:10:58,930
-IE was spending its time
+只有16%的时间是在Javascript上面
+and just sixteen percent of its time was spent in javascript
 
-218
-00:10:58,929 --> 00:11:00,958
-and just sixteen percent of its time was spent
-
-219
-00:11:00,958 --> 00:11:02,149
-in javascript
-
-220
-00:11:02,149 --> 00:11:06,169
+剩下的在布局 渲染和格式化
 rest of it in layout rendering formatting
-and here for ajax heavy sites like
 
-221
-00:11:06,169 --> 00:11:10,349
-javascript heavy sites like uh... gmail
-google maps
+包括Javascript较重的Ajax类网站比如Gmail, Google Maps等
+and here for ajax heavy sites like javascript heavy sites like uh... gmail google maps
 
-222
-00:11:10,350 --> 00:11:13,350
+还是只有一部分
 uh... just still a fraction
 
-223
-00:11:13,350 --> 00:11:16,759
-so javascript is often a small
-fraction of the overall performance
+所以说Javascript只占总性能的一部分
+so javascript is often a small fraction of the overall performance picture
 
-224
-00:11:16,759 --> 00:11:17,700
-picture
+如果你想了解如何让你的网站或者应用更快
+so if you want to find out how to make your app your site fast
 
-225
-00:11:17,700 --> 00:11:19,819
-so if you want to find out how to make
+我建议你使用Chrome开发者工具的Timeline
+I recommend you take a look at the timeline inside the Chrome DevTools so
 
-226
-00:11:19,818 --> 00:11:22,039
-your app your site fast
+这里演示一下
+uh... I'm gonna show that to you now all right
 
-227
-00:11:22,039 --> 00:11:25,409
-I recommend you take a look at the timeline
-inside the chrome dev tools so
-
-228
-00:11:25,409 --> 00:11:28,309
-uh... I'm gonna show that to you now
-
-229
-00:11:28,309 --> 00:11:29,239
-all right
-
-230
-00:11:29,240 --> 00:11:33,340
+这是一个信息图视差网站
 so this is a kind of info graphic parallax site
 
-231
-00:11:33,340 --> 00:11:34,480
-it's pretty cool
+效果做的很炫
+it's pretty cool and I'm just gonna scroll through it so you get a chance to see what's going on
 
-232
-00:11:34,480 --> 00:11:38,149
-and I'm just gonna scroll through it so
-you get a chance to see what's going on so as I
+当我下拉的时候 这里有些橘色的圈圈
+so as I scroll down I got this orange circle bubbly guy and these circles over here
 
-233
-00:11:38,149 --> 00:11:43,319
-scroll down I got this orange
-circle bubbly guy and these
+然后这些圈圈有个很酷的物理爆炸动画
+where is comes to some awesome physics explosion
 
-234
-00:11:43,320 --> 00:11:44,940
-circles over here where is comes to
+下面有个视差的效果
+and then come down here we have a parallax effect it's pretty cool I keep going down
 
-235
-00:11:44,940 --> 00:11:47,660
-some awesome physics explosion
-
-236
-00:11:47,659 --> 00:11:48,799
-uh...
-
-237
-00:11:48,799 --> 00:11:53,229
-and then come down here we have a parallax
-effect it's pretty cool I keep going down
-
-238
-00:11:53,230 --> 00:11:55,649
+继续下拉
 and uh...keep going down
 
-239
-00:11:55,649 --> 00:11:59,870
-these white little dots form these gride
-and just take over the place
+这些小白点慢慢扩大 布满整个页面
+these white little dots form these grids and just take over the place
 
-240
-00:11:59,870 --> 00:12:02,039
+差不多这样
 and that's about it, all right
 
-241
-00:12:02,039 --> 00:12:05,039
-let's come back up and open up dev tool this time
+回到顶部然后打开开发者工具
+let's come back up and open up DevTools this time
 
-242
-00:12:05,039 --> 00:12:07,589
+拉到底部
 and drag it down to the bottom
 
-243
-00:12:07,590 --> 00:12:09,990
+打开Timeline
 open up the timeline
 
-244
-00:12:09,990 --> 00:12:12,100
-and i'm gonna start recording
+然后开始录制
+and I'm gonna start recording
 
-245
-00:12:12,100 --> 00:12:13,329
-just hit Command + D
+快捷键Command + D
+just hit Command + D It's kind of quick
 
-246
-00:12:13,328 --> 00:12:15,139
-It's kind of quick
+然后像刚刚一样继续下拉
+and then I'm just gonna scroll through the same stuff dudu dudu
 
-247
-00:12:15,139 --> 00:12:19,809
-and then I'm just gonna scroll through
-the same stuff
+很酷的是
+all right, what's really cool about that is
 
-248
-00:12:19,809 --> 00:12:24,679
-dudu dudu
+我们把这些东西整理起来像描述一样
+we get for you the performance of the this page kind of in a narrative
 
-249
-00:12:24,679 --> 00:12:28,029
-all right, what's really cool about that
-is we get for you the
-
-250
-00:12:28,029 --> 00:12:30,129
-performance of the this page kind of in a 
-
-251
-00:12:30,129 --> 00:12:31,269
-narrative
-
-252
-00:12:31,269 --> 00:12:33,549
+开始很平淡
 it starts off at the beginning it's pretty chill
 
-253
-00:12:33,549 --> 00:12:36,649
-and then we move on to the sections here
-where there's a lot of green
+然后到这里的绿色
+and then we move on to the sections here where there's a lot of green
 
-254
-00:12:36,649 --> 00:12:38,058
+比较多
 now this is up at the top
 
-255
-00:12:38,058 --> 00:12:40,610
-where we are building out this kind of orange
+特别是这段圈圈铺满页面
+where we are building out this kind of orange explosion of circles
 
-256
-00:12:40,610 --> 00:12:45,039
-explosion of circles and the green is time spent in paint
+绿色代表着绘制
+and the green is time spent in paint
 
-257
-00:12:45,039 --> 00:12:48,588
-and here we are painting the entire
-page on every single frame
+在这里整个页面的每一帧都是在绘制
+and here we are painting the entire page on every single frame
 
-258
-00:12:48,589 --> 00:12:50,430
+这个占据挺多时间
 it's taking a good amount of time
 
-259
-00:12:50,429 --> 00:12:53,120
+然后这里有很多黄色
 then going into this section where there's a lot of yellow
 
-260
-00:12:53,120 --> 00:12:54,039
-and this is javascript executing
+黄色代表Javascript正在执行
+and this is Javascript executing
 
-261
-00:12:54,039 --> 00:12:55,730
-that is when we're hitting
+这是当我们在阅览这块物理爆炸
+that is when we're hitting uh... this little physics action right here
 
-262
-00:12:55,730 --> 00:12:58,940
-uh... this little physics action right here
+然后中间这里比较安静
+that it's pretty quiet for the section in the middle we are hitting our target
 
-263
-00:12:58,940 --> 00:13:03,170
-that it's pretty quiet for the section
-in the middle we are hitting our target
+一直在60帧/秒的帧预算之下
+frame budget of 60 FPS mostly frames stay underneath that for the most part
 
-264
-00:13:03,169 --> 00:13:06,250
-frame budget of sixty FPS mostly frames stay underneath that
+再下来这里色彩缤纷
+and then down at the bottom we kind of have this cacophony of colors
 
-265
-00:13:06,250 --> 00:13:07,539
-for the most part
+这些白色圈圈这里有很多东西发生
+a lot of things happening as this kind of white things exploding
 
-266
-00:13:07,539 --> 00:13:10,669
-and then down at the bottom we kind of have
-this cacophony of colors
+Javascript执行啊 绘制啊 还有布局啊
+uh... both painting javascript and also a good amount of a purple layout here uh... is going on
 
-267
-00:13:10,669 --> 00:13:13,919
-a lot of things happening as this kind of
-white things exploding
+Timeline可以大致的给出问题在哪里
+but timeline is giving us this overall view of finding where our problems are
 
-268
-00:13:13,919 --> 00:13:18,860
-uh... both painting javascript and also
-a good amount of a purple layout here
+还有这是什么问题
+of each section so we can deal with a bit more precise
 
-269
-00:13:18,860 --> 00:13:21,120
-uh... is going on
+这样我们可以更精准的调整这些性能问题
+in how we adjust these performance issues
 
-270
-00:13:21,120 --> 00:13:24,659
-but timeline is giving us this overall
-view of finding where our bomb are ?
+比如说我想更好的了解一下这一段
+so if I wanna look into this section right here I'm gonna do that so let's see right here
 
-271
-00:13:24,659 --> 00:13:27,860
-of each section so we can deal with a bit
-more precise in how we adjust these
+的Javascript性能怎么样
+uh... and I want to get a better idea of this javascript performance so let's do that
 
-272
-00:13:27,860 --> 00:13:29,110
-performance issues
+我去Profile 选择CPU Profile Command + E键
+I'm gonna go over to profiles and collect a CPU profile Hit Command + E
 
-273
-00:13:29,110 --> 00:13:30,810
-so if I wanna look into
+这样就完成了
+and it's probably good
 
-274
-00:13:30,809 --> 00:13:36,319
-this section right here I'm gonna do that
-so let's see right here
+然后到这里你应该都熟悉这些内容
+and now if I come over here and uh... so this you should be used to
 
-275
-00:13:36,320 --> 00:13:41,300
-uh... and I want to get a better idea of
-this javascript performance
-
-276
-00:13:41,299 --> 00:13:43,490
-so let's do that
-
-277
-00:13:43,490 --> 00:13:48,919
-I'm gonna go over to profiles and collect a CPU profile
-
-278
-00:13:48,919 --> 00:13:51,789
-Hit Command + E
-
-279
-00:13:51,789 --> 00:13:53,709
-and
-
-280
-00:13:53,710 --> 00:13:54,970
-it's probably good
-
-281
-00:13:54,970 --> 00:13:58,470
-and now if I come over here and uh...
-
-282
-00:13:58,470 --> 00:14:00,480
-so this you should be used to
-
-283
-00:14:00,480 --> 00:14:03,450
+这个是总汇
 kind of the aggregate view of everything that's going on
 
-284
-00:14:03,450 --> 00:14:08,320
-and it is telling me kind of here are
-all the things that happened information
+它告诉我以下是所有发生过的东西
+and it is telling me kind of here are all the things that happened
 
-285
-00:14:08,320 --> 00:14:10,010
-well what it's not doing it is
+但是它没有
+information well what it's not doing
 
-286
-00:14:10,009 --> 00:14:13,559
-giving it to me and kind of this view
-I could see frame by frame
+以一个流程的方式展现这个
+it is giving it to me and kind of this view I could see frame by frame
 
-287
-00:14:13,559 --> 00:14:16,959
+把每一点发生的都显示出来
 what happened bit by a bit
 
-288
-00:14:16,960 --> 00:14:20,110
-so this is we found we can
-address and also give you a better idea as
+我们开发者工具团队觉得这里我们可以更好的展现出来
+so this is we found we can address and also give you a better idea
 
-289
-00:14:20,110 --> 00:14:20,919
-far as
+特别是以一个图像的方式
+as far as of visualization of this action
 
-290
-00:14:20,919 --> 00:14:22,748
-of visualization of this action
-
-291
-00:14:22,749 --> 00:14:25,279
+让我来介绍一下这个新的特性
 so I want to show it to you a new feature
 
-292
-00:14:25,279 --> 00:14:29,019
+我们叫它火焰图
 and it's called the flame chart
 
-293
-00:14:29,019 --> 00:14:29,990
-uh...all right
+通过火焰图
+uh...all right so here we have the flame chart
 
-294
-00:14:29,990 --> 00:14:32,279
-so here we have the flame chart
+我们可以了解到事件的由来和经过
+we're able to identify kind of at time scale across time how things are changing
 
-295
-00:14:32,279 --> 00:14:36,759
-we're able to identify kind of at
-time scale across time how things are
+在这个页面上其实挺一致的
+in this case it's actually pretty consistent
 
-296
-00:14:36,759 --> 00:14:39,629
-changing in this case it's actually pretty consistent
+每帧都是执行同样的Javascript
+um... frame by frame looks like it's mostly executing the same javascript
 
-297
-00:14:39,629 --> 00:14:43,189
-um... frame by frame looks like it's
-mostly executing the same javascript
+如果不一样 它的颜色会变化
+it would change color if not uh...
 
-298
-00:14:43,190 --> 00:14:44,820
-it would change color if not
+然后我们来详细看看这一个帧
+and then it also drill in so this is one frame in particular
 
-299
-00:14:44,820 --> 00:14:46,290
-uh... and then it also 
+宽度代表时间
+and in this case uh... width is time
 
-300
-00:14:46,289 --> 00:14:49,709
-drill in so this is one frame in particular
+高度代表调用堆栈 这里高度不是很重要
+and height is call stacks so height's not too important but umm
 
-301
-00:14:49,710 --> 00:14:50,790
-and
+如果我想细看几件事
+if I wanna look in I can see a few things let's say uh... here
 
-302
-00:14:50,789 --> 00:14:53,009
-in this case uh...
+貌似D3在占领主要的时间
+looks like D3 is kind of running the show
 
-303
-00:14:53,009 --> 00:14:53,889
-width is time
+all my time to spend inside D3
 
-304
-00:14:53,889 --> 00:14:57,179
-and height is call stacks so height's not too important
-
-305
-00:14:57,179 --> 00:14:58,339
-but umm
-
-306
-00:14:58,340 --> 00:15:02,460
-if I wanna look in I can see a few things let's say
-
-307
-00:15:02,460 --> 00:15:04,030
-uh... here
-
-308
-00:15:04,029 --> 00:15:07,429
-looks like D3 is kind of running
-the show all my time to spend inside D3
-
-309
-00:15:07,429 --> 00:15:08,419
-
-310
-00:15:08,419 --> 00:15:12,779
+这里有一些insertChild还有SVG插入
 we got some insert child so it's doing some SVG inserting
 
-311
-00:15:12,779 --> 00:15:19,240
-uh... and then we have this quadtree view 
-quadtree view quadtree view quadtree view
-insert child
+然后好多quadTree View
+uh... and then we have this quadtree view quadtree view quadtree view quadtree view insert child
 
-312
-00:15:19,240 --> 00:15:23,110
-but also inserting attribute function just
-settings new attributes in the SVG at the
+还有插入新属性
+but also the attribute function
 
-313
-00:15:23,110 --> 00:15:24,600
-end of the frame
+设置SVG的新属性
+just settings new attributes in the SVG at the end of the frame
 
-314
-00:15:24,600 --> 00:15:27,960
-this is a seven milliseconds in this case
-which is a considerable amount of time
+这里总共执行了7毫秒
+this is a seven milliseconds in this case which is a considerable amount of time
 
-315
-00:15:27,960 --> 00:15:29,720
+但是每帧都7毫秒其实也是比较长的时间
 to happen every single frame
 
-316
-00:15:29,720 --> 00:15:33,600
-but this visualization is giving me a great view as far as what is soaking up this
+这个图像化可以让我更好的看到
+but this visualization is giving me a great view as far as
 
-317
-00:15:33,600 --> 00:15:37,790
-time and what should i address first
+什么东西在占用时间
+what is soaking up this time
 
-318
-00:15:37,789 --> 00:15:39,659
+我应该先调整什么
+and what should I address first
+
+这就是火焰图
 so that's the new flamed chart
 
-319
-00:15:39,659 --> 00:15:41,699
+Chrome Canary里面现在就有了
 you can check it out in chrome canary today
 
-320
-00:15:41,700 --> 00:15:46,090
-uh... we also have a canvas profiling
-experiment that I want to show to you now
+还有一个Canvas Profiling Experiment
+uh... we also have a canvas profiling experiment that I want to show to you now
 
-321
-00:15:46,090 --> 00:15:51,850
-so this here just this webGL aquarium
-and Imma open up the dev tools
+演示是一个水族馆 打开开发者工具
+so this here just this WebGL aquarium and Imma open up the DevTools
 
-322
-00:15:51,850 --> 00:15:56,779
-and take a canvas profile so it's
-gonna record single canvas frame and
+抓取一个Canvas Profile
+and take a canvas profile so it's gonna record single canvas frame and
 
-323
-00:15:56,779 --> 00:16:00,500
-it's recording all the calls that
-contributed to that frame
+记录下每一帧里面的所有函数引用
+it's recording all the calls that contributed to that frame
 
-324
-00:16:00,500 --> 00:16:04,129
-and poke through all the draw calls
-one-by-one and just hitting the down arrow
+然后用下按键过
+and poke through all the draw calls one-by-one and
 
-325
-00:16:04,129 --> 00:16:06,090
-on the keyboard walking through
+每一个函数
+just hitting the down arrow on the keyboard walking through
 
-326
-00:16:06,090 --> 00:16:09,360
+这里你可以看到每个场面是如何花出来的
 how the scene was actually drawn so you can see
 
-327
-00:16:09,360 --> 00:16:11,820
+先有鱼 然后又这个鲨鱼
 the fishes come in and the shark come in
 
-328
-00:16:11,820 --> 00:16:15,670
-the the the ball kind of come in
-and everything else
+还有球 和其他东西
+the ball kind of come in and everything else
 
-329
-00:16:15,669 --> 00:16:18,639
-and then you open up the draw calls
-and see all the function calls
+然后打开这些绘图函数
+and then you open up the draw calls and
 
-330
-00:16:18,639 --> 00:16:20,259
-that contributed to that draw
+看看运用了哪些函数
+see all the function calls that contributed to that draw
 
-331
-00:16:20,259 --> 00:16:21,950
+回到源代码
 and go back to the sources
 
-332
-00:16:21,950 --> 00:16:26,210
+这个工具很酷
 so this is cool but this is a platform
-this is we are able to record and replay
 
-333
-00:16:26,210 --> 00:16:28,120
-canvas and webGL action
+有了它 我们可以录制和播放Canvas和WebGL的动作
+this is we are able to record and replay canvas and webGL action
 
-334
-00:16:28,120 --> 00:16:30,568
-uh... but really where we go from here
+但是这只是起步 之后如何变得更好取决于大家的回馈
+uh... but really where we go from here is up to you and
 
-335
-00:16:30,568 --> 00:16:34,358
-is up to you and so please wrench in
-your feedback in kind of what you would
+你想看到哪些新特性
+so please wrench in your feedback in kind of
 
-336
-00:16:34,359 --> 00:16:38,889
-like to see next as far as a canvas profiler
+大概我就介绍到这里
+what you would like to see next as far as a canvas profiler
 
-337
-00:16:38,889 --> 00:16:42,649
-all right I'm gonna wrap-up with five key
-dev tools performance features
+最后谈谈开发者工具针对性能方面开发的5个特性
+all right I'm gonna wrap-up with five key DevTools performance features
 
-338
-00:16:42,649 --> 00:16:44,970
+第一个Continuous Repaint Mode
 first up continuous repaint mode
 
-339
-00:16:44,970 --> 00:16:49,009
-if you're in the timeline you see a lot
-of time spent inside green painting
+如果你在Timeline里面 你看到绘图占用很多时间
+if you're in the timeline you see a lot of time spent inside green painting
 
-340
-00:16:49,009 --> 00:16:51,850
-then you probably wanna head over t
-continuous repaint mode what it's gonna do
+你可以打开Continuous Repaint Mode
+then you probably wanna head over to continuous repaint mode
 
-341
-00:16:51,850 --> 00:16:52,999
-is tell the browser
+它会让浏览器不停的重新绘制页面
+what it's gonna do is tell the browser
 
-342
-00:16:52,999 --> 00:16:55,759
 hey paint the page again and again and again
 
-343
-00:16:55,759 --> 00:16:58,730
+这样你就可以关闭元素和样式
 and what this allows you to do is turn off elements and styles
 
-344
-00:16:58,730 --> 00:17:01,789
-and figure out what is contributing to the
-amount of time that it takes to paint
+了解是什么在占用页面绘制时间
+and figure out what is contributing to the amount of time that it takes to paint the page
 
-345
-00:17:01,789 --> 00:17:02,769
-the page
+这样你就能
+uh... and this is able to uh... to let you find out what's contributing
 
-346
-00:17:02,769 --> 00:17:06,709
-uh... and this is able to uh... to let
-you find out what's contributing what you
+方便的调整这些更变
+what you could adjust uh... it the changes so
 
-347
-00:17:06,709 --> 00:17:11,230
-could adjust uh... it the changes so
-it's a it's a little tough to
+但是这个工具不是用于了解绘制总汇
+it's a it's a little tough to given aggregate view of
 
-348
-00:17:11,230 --> 00:17:12,470
-given aggregate view of
+只是用于寻找哪些东西占用页面绘制时间
+but you're able to find out exactly what's contributing there
 
-349
-00:17:12,470 --> 00:17:15,329
-but you're able to find out exactly
-what's contributing there
+然后有FPS Meter用于
+and also the FPS Meter um... which gives you a good view of
 
-350
-00:17:15,329 --> 00:17:19,269
-and also the FPS Meter um... which
-gives you a good view of how fast you're
+观察你发送更新的频率
+how fast you're sending updates to the screen
 
-351
-00:17:19,269 --> 00:17:21,029
-sending updates to the screen
-
-352
-00:17:21,029 --> 00:17:24,930
+还有每秒的帧次数
 so in addition to showing the frames per second
-we also have min and max in that view
 
-353
-00:17:24,930 --> 00:17:26,110
-and a histogram
+窗口里面也有GPU内存 最小和最大的帧次数 还有柱状图的总结
+we also have min and max in that view and a histogram also the GPU memory
 
-354
-00:17:26,109 --> 00:17:29,298
-also the GPU memory so you can see how much memory
+这样你可以看到当前页面使用的内存
+so you can see how much memory is being used by the current tab
 
-355
-00:17:29,298 --> 00:17:33,388
-is being used by the current tab, how
-much is allocated if you have a lot of
+被分配了多少内存 如果有大量图片需要处理
+how much is allocated if you have a lot of heavy imagery
 
-356
-00:17:33,388 --> 00:17:36,308
-heavy imagery you're going to constantly
-evicting things out of the GPU
+那么你会发现GPU内存会一直清除
+you're going to constantly evicting things out of the GPU memory
 
-357
-00:17:36,308 --> 00:17:40,930
-memory which is probably gonna soak up a good amount of GPU performance
+这样会导致GPU性能问题
+which is probably gonna soak up a good amount of GPU performance
 
-358
-00:17:40,930 --> 00:17:45,140
+下一个Show Paint Rects 还有Layer Borders
 uh... next up show paint rects and layer borders
-these are available as settings inside
 
-359
-00:17:45,140 --> 00:17:45,969
-dev tools
+这些也是开发者工具里面的设置
+these are available as settings inside DevTools
 
-360
-00:17:45,969 --> 00:17:49,940
-really great at identifying paint 
-issues so you might be repainting
+也是用于发掘绘制问题
+really great for identifying paint issues
 
-361
-00:17:49,940 --> 00:17:52,750
-the entire page on every single scroll
+可能在页面翻滚的时候 会重新绘制
+so you might be repainting the entire page on every single scroll you don't wanna do that
 
-362
-00:17:52,750 --> 00:17:55,779
-you don't wannna to do that and this is
-going to show you a visual view of that
+这个工具能给你一个图形视野
+and this is going to show you a visual view of that happening really fast
 
-363
-00:17:55,779 --> 00:17:58,979
-happening really fast in this case uh...
-it looks like
+看起来这个DIV刚刚被重新绘制了
+in this case uh... it looks like this div was just repainted
 
-364
-00:17:58,979 --> 00:18:01,058
-this div was just repainted and we have
+我们这里还有一个金色的边
+and we have uh... a layer over here with the gold border
 
-365
-00:18:01,058 --> 00:18:04,569
-uh... a layer over here with the gold border
-
-366
-00:18:04,569 --> 00:18:08,500
+这个应该是一个卷动条
 it's actually the scrollbar which
-chrome actually composites right on
 
-367
-00:18:08,500 --> 00:18:11,210
-top of the page
+Chrome自动合成在页面上的
+chrome actually composites right on top of the page
 
-368
-00:18:11,210 --> 00:18:14,890
-the object allocation trackers a brand
-new tool if you're doing a lot of memory
+Object Allocation Tracker是一个崭新的工具
+the object allocation trackers a brand new tool
 
-369
-00:18:14,890 --> 00:18:18,440
-analysis this is going to key for you so
-you hit a do recording and it's gonna take
+用于内存分析
+if you're doing a lot of memory analysis this is going to key for you so
 
-370
-00:18:18,440 --> 00:18:24,490
-continual heap snapshots over time
+你点击记录 然后它会继续对堆栈进行快照
+you hit a do recording and it's gonna take continual heap snapshots over time
+
+这样你可以分析某一部分中
 that's how it identifies drillin on one specific part
 
-371
-00:18:24,490 --> 00:18:28,240
+分配的对象
 to see what objects were allocated in that section
 
-372
-00:18:28,240 --> 00:18:31,250
-and what they retain size and what they
-retaining tree which is great even try
+? 完全不知道该肿么翻译
+and what they retain size and what they retaining tree which is great
 
-373
-00:18:31,250 --> 00:18:35,240
-to identify where your memory is coming
-from and where it's going
+甚至这些内存的来去
+even try to identify where your memory is coming from and where it's going
 
-374
-00:18:35,240 --> 00:18:40,190
-lastly layout thrashing back in uh...
-this timeline here
+最后一个工具Layout Thrashing
+lastly layout thrashing back in uh...this timeline here
 
-375
-00:18:40,190 --> 00:18:43,470
-we see a good amount of time spent in
-layout
+在这个时间表里面我们看到有许多时间花在布局上面
+we see a good amount of time spent in layout
 
-376
-00:18:43,470 --> 00:18:47,519
-and here we're able to identify a
-bunch of stuff have you had a DOM heavy
+这里我们可以看到这是一个频繁更改DOM的应用
+and here we're able to identify a bunch of stuff
 
-377
-00:18:47,519 --> 00:18:49,210
-web applications
+have you had a DOM heavy web applications
 
-378
-00:18:49,210 --> 00:18:53,170
-you might see something like this where
-you doing layout and layout and layout
+你可能看到很多的重新布局
+you might see something like this where you doing layout and layout and layout
 
-379
-00:18:53,170 --> 00:18:56,410
-and there's no paint you do it all this
-work and you're asking browser to do all this
+但是没有绘制
+and there's no paint you do it all this work
 
-380
-00:18:56,410 --> 00:18:57,220
-work
+浏览器一直在不停的布局
+and you're asking browser to do all this work
 
-381
-00:18:57,220 --> 00:19:02,100
-and the users never seen a lot of it and
-this is a problem dev tools is gonna
+这是一个问题
+and the users never seen a lot of it and this is a problem
 
-382
-00:19:02,099 --> 00:19:06,000
-tell you that with this little icon that there is
-possible performance bottleneck
+开发者工具会显示这个黄图标
+DevTools is gonna tell you that with this little icon
 
-383
-00:19:06,000 --> 00:19:09,730
-uh... this is also gonna give you
-a lot of other useful information too
+告诉你这里可能有性能问题
+that there is possible performance bottleneck
 
-384
-00:19:09,730 --> 00:19:13,500
-the amount of nodes that need layouts
-the tree size the scope
+同时也告诉你很多其他的信息
+uh... this is also gonna give you a lot of other useful information too
 
-385
-00:19:13,500 --> 00:19:18,150
-and also a full call stack for why the
-layout was invalidated why it was forced to
+比如重新布局的节点数 树大小 还有范围
+the amount of nodes that need layouts the tree size the scope
 
-386
-00:19:18,150 --> 00:19:22,030
-conjoint as functions and find exactly
-why things were caused maybe you're gonna need
+还有一整个调用堆栈
+and also a full call stack for why the layout was invalidated
 
-387
-00:19:22,029 --> 00:19:24,119
-to change some things around
+why it was forced to conjoint as functions
 
-388
-00:19:24,119 --> 00:19:27,639
-so a lot of details and this is key to getting good performance on web
+为什么这些事情会发生
+and find exactly why things were caused
 
-389
-00:19:27,640 --> 00:19:29,299
-applications
+这样你可以去调整 这里有很多的细节
+maybe you're gonna need to change some things around so a lot of details
 
-390
-00:19:29,298 --> 00:19:33,420
-okay that's a lot of stuff the chrome tools documentation 
-has recently got a bunch of
+帮助你更好的了解如何提高应用的性能
+and this is key to getting good performance on web applications
 
-391
-00:19:33,420 --> 00:19:37,070
-new updates covering these things
-and a bunch more including remote
+今天介绍了很多东西
+okay that's a lot of stuff
 
-392
-00:19:37,069 --> 00:19:41,829
-debugging everything i show today uh...
-is available as you remote debug your
+最近Chrome开发者工具文档也新增了很多内容
+the chrome tools documentation has recently got a bunch of new updates
 
-393
-00:19:41,829 --> 00:19:46,308
-phone uh... so it's a really powerful
-setup and I encourage you to check that out
+包括今天讲的这些还有远程调试
+covering these things and a bunch more including remote debugging
 
-394
-00:19:46,308 --> 00:19:50,259
-uh... everything I should today is also
-available in canary some of them behind
+今天讲的所有特性都可以用于远程调试
+everything I show today uh... is available as you remote debug your phone
 
-395
-00:19:50,259 --> 00:19:54,220
-experiments but I encourage you to check out
-try things holler at me and tell me what
+这样的设置真的很强大 我建议大家都试一试
+uh... so it's a really powerful setup and I encourage you to check that out
 
-396
-00:19:54,220 --> 00:19:57,860
-you like what you don't like uh... and uh... it'd be good
+今天演示的所有东西在Canary里面都可以找到
+uh... everything I showed today is also available in canary
 
+有些还在Experiments里面需要开启
+some of them behind experiments
+
+但是我建议你去看看
+but I encourage you to check out try things
+
+让我知道你觉得有什么可以再改进
+holler at me and tell me what you like what you don't like uh...
+
+有反馈很好
+and uh... it'd be good
 
 最后 非常感谢大家
 but thank you guys very much
