@@ -940,9 +940,10 @@ uh... this is also gonna give you a lot of other useful information too
 比如重新布局的节点数 树大小 还有范围
 the amount of nodes that need layouts the tree size the scope
 
-还有一整个调用堆栈
+同时（提供）布局失效时的完整调用堆栈
 and also a full call stack for why the layout was invalidated
 
+为何导致这些密集得像函数(被反复调用)链
 why it was forced to conjoint as functions
 
 为什么这些事情会发生
