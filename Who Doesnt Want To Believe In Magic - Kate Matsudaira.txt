@@ -1,0 +1,182 @@
+who wants to be awesome at their jobs?
+raise your hand, okay
+so those of you not raising your hand
+I'm gonna assume you're already awesome
+so let me ask you a different question
+who wants to be happy at work? right
+now everyone should be raising their hand
+why won't you want to be happy?
+
+so think about the last time you were really happy at work
+what were you doing?
+what I want you to do is I want you to hold that moment in your mind
+while we talk about
+(the clickers are not working)
+I want you to hold that moment in your mind
+(there we go)
+while we talk about what it takes to be happy
+
+for some people, it might just be stability and paycheck
+but while getting paid is certainly nice
+I believe you have a desire
+a desire for a job that is gonna challenge you
+and engage you and give you an opportunity for growth
+
+so there have been a lot of studies on happiness
+and one of more prominent ones was wrote by professor chickson mih
+who also coined the term flow and in his study
+he said the best moments were not the ones where we are sitting passive
+and just kind of waiting and receptive and relaxing
+but the best moments are actually when we push ourselves
+and we put in a lot of efforts achieve something worthwhile
+and this is actually a really beautiful thing
+because this means we can control and we can make ourselves happy
+
+when he talks about with flow
+and I'm sure many of you have heard this term
+it's that moment when your work feels effortless
+when you finish you have this great sense of accomplishment and achievement
+so flow is most likely to occur when you have the challenge of your work maps to your skills for that task
+achieve flow in a lot of ways is like mastery
+
+the thing about flow and mastering things is that 
+in order to stay in that state
+you've got to seek out new challenges and information
+as if it's an ongoing journey
+flow isn't a destination that you arrive at
+it's a process
+
+and suddenly the question becomes how do we flow
+and this is where magic and abstraction come into our story
+you see mastery is achieved through understanding
+and understanding means we aren't going to accept the magic and the tools and the technology and dive down into the abstractions that are supporting our work
+so what do I mean by this illusion of abstraction and magic
+
+well if you think about it
+programming and of itself is an act of creating abstraction
+you're building a whole that is greater than the sum of its parts
+a more concrete example
+if you have a buck of logic gates
+and you put them together
+and you can build a circuit
+if you put a bunch of circuits together
+you can build a computer
+if you put a bunch of 0s and 1s
+you can put a programming language
+and build a file system
+and build an application
+and eventually a website that shows pictures of funny cats
+
+and in each level
+there is an abstraction
+and these abstractions kind of transcend
+all the parts that put them together
+
+but the thing is, if you want to be a master
+you can't accept abstractions
+if fact I believe you can't do anything magical of your own
+unless you understand the illusion supporting your tools
+
+so let me tell you a little story to illustrate this point
+in the late 1600s, there is a promising alchemist named johan beker
+he worked tirelessly to help determine the formula to turn metal into gold
+he felt like he was so close in the progress
+he was so blinded by his ambitions
+that he decided to do a little demo for his friends
+almost an illusion magic trick if you will
+where he performs this transformation
+and while his demo went off without a hitch
+he didn't account for the king would catch a wind of this experiment
+and before long he was in prison forced to reproduce his results
+
+so after years of trying without success
+since it involves nuclear power which he didn't have
+he was about to be put to death
+but the king gave him one more chance
+because your see in his time
+porcelain was valued equal to gold or silver
+but no one had quite figured out the mystery to manufacture it yet
+so he focused on really understanding the abstraction
+which is material, method, and equipment
+and everything you would need to create porcelain
+it was through this careful experimentation
+this alchemist turned industrial chemist
+was able to produce the first European porcelain
+
+and it is through understanding and mastery
+he was able to create real magic
+this theme of deep understanding and mastery
+carry through time to our profession too
+important achievements like the SPDY protocol wouldn't have been possible without really understanding low level networking and browser internals
+similarly the Sencha team created their own version of the Facebook IOS app which they dubbed Fastbook to show that
+if you took the time to understand what was going on under the hood you can build a great app in HTML5
+
+in my own experience we launched a rail app
+that buckled under the weight of our users
+because we didn't fully understand everything active record
+was doing under the covers
+and it was only through careful analysis
+that seemingly innoculous query generated this view
+and all of these other views
+that we are able to understand what we need to do to scale our systems
+to meet our customer demands
+
+but this is the thing
+as you get more and more magic and abstraction in your tools
+it becomes more and more important to look inside that black box
+and understand what is happening
+at a minimum you need to understand where your abstraction falls apart
+I consider this having a car mechanism level of ability for all the tools you use
+this means you've taken the time to understand how to deploy and install all the software
+that you know the performance and reliability characteristics of your stack
+that you know who to call and where to look when things don't work the way you think they should
+
+getting back to our original point about being happy
+since that's what you care about
+so being happy is about finding flow
+all of this flows from mastery
+if you want to be successful in an area of your life
+it really comes down to mastering the laws of cause and effect
+
+if you know someone who is an amazing developer
+then chances are they have mastered the cause
+which is the effort required to achieve the effect
+which is their desire result or outcome
+
+because success isn't chance
+success is mastering
+
+if you want to be successful
+I'm pretty sure you all do
+the driving desire to be a master is critical in that journey
+and in technology
+mastering can only be achieved through understanding
+but this understanding implies you are going to stop accepting magic
+and push through those plateaus and dips and learning curves
+
+this means that you're going to look at every new tasks that comes to you
+with what is the most I can do here
+or how can I blow people away with this project
+and when you do this
+this process is not just a destination
+it is a whole journey and it is an exciting one
+
+there is simply no way to be perfect at what you do
+but there are perfect moments
+the brilliant slivers of time where everything just comes together and falls into place
+and it's these moments that make everything worthwhile
+
+this is good because at the end of the day
+mastering requires sacrifice
+this path is like a common one or an average attempt that you can do in your regular working hours or in your spare time
+it means if you truly want to be be a master
+you're actively spending time there and forego other pursuits
+because we are defined by what we make time to do
+not by what we do when we have time
+
+I'm gonna leave you with one final thought
+in the end, this pursuit can lead to success in a job you love
+but most of all I want you to have a good reason
+to start accepting magic and go and create magic of your own
+
+thank you
